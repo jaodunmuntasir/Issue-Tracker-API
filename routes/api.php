@@ -7,4 +7,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::resource('issues', 'App\Http\Controllers\IssuesController');
+Route::resource('issues', 'App\Http\Controllers\IssueController');

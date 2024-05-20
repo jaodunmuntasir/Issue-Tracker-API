@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('issues', function (Blueprint $table) {
             $table->id();
+
+            $table->string('title');
+            $table->text('description');
+            $table->string('place');
+            $table->enum('status', ['Open', 'In Progress', 'Closed']);
+
             $table->timestamps();
         });
     }

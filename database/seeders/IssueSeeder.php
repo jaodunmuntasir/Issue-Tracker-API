@@ -12,6 +12,6 @@ class IssueSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\Issue::factory(20)->create();
     }
 }

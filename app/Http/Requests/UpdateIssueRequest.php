@@ -11,7 +11,7 @@ class UpdateIssueRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class UpdateIssueRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => ['sometimes','required', 'string', 'max:255'],
+            'description' => ['sometimes','required', 'string'],
+            'place' => ['sometimes','required', 'string'],
+            'status' => ['sometimes','required', 'string', 'in:Open,In Progress,Closed'],
         ];
     }
 }
